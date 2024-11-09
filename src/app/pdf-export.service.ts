@@ -12,6 +12,7 @@ export class PdfExportService {
     // Create a temporary div to hold our template
     const element = document.createElement('div');
     element.innerHTML = this.generateTemplate(data);
+    //need to hide this, this is not clean to see the export before cleaning it
     document.body.appendChild(element);
 
     try {
@@ -52,7 +53,7 @@ export class PdfExportService {
       // Save the PDF
       pdf.save(`${fileName}.pdf`);
     } finally {
-      // Clean up temporary element
+      // Clean up temporary element: need to find a way to not have the temporary element
       document.body.removeChild(element);
     }
   }
@@ -75,7 +76,8 @@ export class PdfExportService {
             <p style="color: #7f8c8d; margin: 5px 0;">Generated on ${currentDate}</p>
           </div>
           <div style="text-align: right;">
-            <img src="YOUR_LOGO_URL" alt="Company Logo" style="max-width: 150px;"/>
+          <!-- Need to inject the logo here-->
+            <img src="assets/img/vecteur-degrade-logo-colore-oiseau_343694-1365.jpg.avif" alt="Company Logo" style="max-width: 150px;"/>
             <p style="margin: 5px 0;">Company Name</p>
           </div>
         </div>
