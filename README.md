@@ -1,6 +1,12 @@
 # Pdf
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
+This project is a demo using jspdf to export nicely formatted PDF from Angular component
+
+The way this first drop is build needs improvement as the usage of html2canvas is probably not the most appropriate way to inject the data to the pdf file and the best user experience.
+Having the grid created and destroyed is a bad design...
+
+Feel free to improve
 
 ## Development server
 
